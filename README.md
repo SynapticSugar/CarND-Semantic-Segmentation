@@ -1,6 +1,7 @@
 # Semantic Segmentation
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+Specifically we are basing it off of the [FCN-8 architecture](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf).
 
 ### Setup
 ##### GPU
@@ -11,6 +12,25 @@ Make sure you have the following is installed:
  - [TensorFlow](https://www.tensorflow.org/)
  - [NumPy](http://www.numpy.org/)
  - [SciPy](https://www.scipy.org/)
+
+#### Tensorflow GPU Support
+
+CUDA® Toolkit 9.0. For details, see [NVIDIA's documentation](http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/) Ensure that you append the relevant Cuda pathnames to the %PATH% environment variable as described in the NVIDIA documentation.
+
+The NVIDIA drivers associated with CUDA Toolkit 9.0.
+cuDNN v7.0. For details, see [NVIDIA's documentation](https://developer.nvidia.com/cudnn). Note that cuDNN is typically installed in a different location from the other CUDA DLLs. Ensure that you add the directory where you installed the cuDNN DLL to your %PATH% environment variable.
+
+#### Miniconda Install
+
+```
+conda create -n tensorflow pip python=3.5
+activate tensorflow
+pip install --ignore-installed --upgrade tensorflow-gpu
+pip install scipy
+pip install tqdm
+pip install Pillow
+```
+
 ##### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
